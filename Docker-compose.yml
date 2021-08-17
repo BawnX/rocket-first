@@ -1,0 +1,14 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  rust-api:
+    build: .
+    ports:
+      - "8000:8080"
+    links:
+      - seq
+  seq:
+    image: datalust/seq:latest
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - "5341:80"

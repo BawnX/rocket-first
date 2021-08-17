@@ -1,0 +1,55 @@
+###
+GET http://localhost:8000/api/hello_world
+
+###
+GET http://localhost:8000/api/Antonio
+
+###
+GET http://localhost:8000/api/hello?name=Antonio
+
+###
+GET http://localhost:8000/api/hello?name=Antonio&solutation=Holiwis
+
+###
+GET http://localhost:8000/api/protected
+
+###
+GET http://localhost:8000/api/protected
+x-api-key: c2VjcmV0
+
+###
+GET http://localhost:8000/api/login
+
+###
+GET http://localhost:8000/api/session
+
+###
+POST http://localhost:8000/api/heroes
+Content-Type: application/json
+
+{
+  "name": "Kratos",
+  "canFly": true
+}
+
+> {%
+    client.global.set("addedHeroeId", response.body.id);
+%}
+
+###
+POST http://localhost:8000/api/heroes
+Content-Type: application/json
+
+{
+  "nae": "Kratos",
+  "canFly": true
+}
+
+###
+GET http://localhost:8000/api/heroes/{{addedHeroeId}}
+
+###
+GET http://localhost:8000/api/heroes/99
+
+###
+GET http://localhost:8000/api/heroes
