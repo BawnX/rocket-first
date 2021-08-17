@@ -1,6 +1,6 @@
-// #![cfg_attr(debug_assertions, allow(dead_code, unused_imports))]
-// #![feature(proc_macro_hygiene, decl_macro)]
-//
+#![cfg_attr(debug_assertions, allow(dead_code, unused_imports))]
+#![feature(proc_macro_hygiene, decl_macro)]
+
 #[macro_use]
 extern crate rocket;
 
@@ -18,8 +18,8 @@ use rocket::{serde::json::Json, serde::json::Value};
 use serde::{Serialize, Deserialize};
 use serde_json::json;
 
-// #[cfg(test)]
-// mod test;
+#[cfg(test)]
+mod test;
 
 mod api_key;
 
